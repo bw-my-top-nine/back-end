@@ -68,7 +68,7 @@ router.get('/users', authenticateMiddleware, (request, response) => {
 router.delete('/users/:id', (request, response) => {
   authenticationModel.remove(request.params.id)
     .then(user => {
-      response.json({ message: `deleted ${user}`})
+      response.status(200).json({ message: `deleted ${user}`})
     })
     .catch(error => {
       response.status(500).json(error)

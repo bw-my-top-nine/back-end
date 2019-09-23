@@ -99,3 +99,6 @@ public
 
 #secret file
 secrets.js
+
+#env
+.env
