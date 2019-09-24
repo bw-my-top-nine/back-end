@@ -19,7 +19,10 @@ module.exports = {
 
   production: {
     client: 'sqlite3',
-    connection: process.env.DATABASE_URL,
+    connection: {
+      filename: './database/authentication.db3'
+    },
+    useNullAsDefault: true,
     migrations: {
       directory: './database/migrations',
       tableName: 'knex_migrations'
@@ -28,4 +31,5 @@ module.exports = {
       directory: './database/seeds'
     }
   }
+
 }
