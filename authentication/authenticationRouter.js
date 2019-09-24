@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 const authenticationModel = require('./authenticationModel')
 
 // MIDDLEWARE IMPORTS
-const authenticateMiddleware = require('./authenticateMiddleware')
+// const authenticateMiddleware = require('./authenticateMiddleware')
 
 // WEB TOKEN FILE IMPORTS
 const secret = require('./secrets.js')
@@ -74,5 +74,24 @@ router.delete('/users/:id', (request, response) => {
       response.status(500).json(error)
     })
 })
+
+function authenticateMiddleware(request, response, next) {
+  const token = request.headers.authorization
+
+  if (token) {
+    jwt.verify(token, secret.jwtSecret, (error, decodedToken) => {
+      if (error) {
+        response.status(401).json({ message: 'Invalid Credentials' });
+      }
+      else {
+        request.user = { username: decodedToken.username }
+        next()
+      }
+    })
+  }
+  else {
+    response.status(400).json({ message: "No Credentials Provided" })
+  }
+}
 
 module.exports = router
