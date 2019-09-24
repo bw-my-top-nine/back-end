@@ -80,7 +80,7 @@ function authenticateMiddleware(request, response, next) {
   const token = request.headers.authorization
 
   if (token) {
-    jwt.verify(token, secret.jwtSecret, (error, decodedToken) => {
+    jwt.verify(token, "keep it secret", (error, decodedToken) => {
       if (error) {
         response.status(401).json({ message: 'Invalid Credentials' });
       }
