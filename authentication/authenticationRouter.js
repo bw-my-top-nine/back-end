@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 const authenticationModel = require('./authenticationModel')
 
 // MIDDLEWARE IMPORTS
-const authenticateMiddleware = require('./authenticateMiddleware')
+// const authenticateMiddleware = require('./authenticateMiddleware')
 
 // WEB TOKEN FILE IMPORTS
 const secret = require('./secrets.js')
@@ -54,7 +54,7 @@ router.post('/login', (request, response) => {
 })
 
 // GET ALL USERS ((R)EAD)
-router.get('/users', authenticateMiddleware, (request, response) => {
+router.get('/users', (request, response) => {
   authenticationModel.find()
     .then(users => {
       response.json(users)
