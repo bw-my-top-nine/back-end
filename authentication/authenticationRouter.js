@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken")
 const bcrypt = require('bcryptjs');
 
 // MODEL IMPORTS
-const authenticationModel = require('./authenticationModel')
+const authenticationModel = require('./authenticationModel.js')
 
 // MIDDLEWARE IMPORTS
 // const authenticateMiddleware = require('./authenticateMiddleware')
@@ -35,14 +35,15 @@ router.post('/register', (request, response) => {
 
 // POST USER - LOGIN ((C)REATE)
 router.post('/login', (request, response) => {
-  const { username, password } = request.body
+  const { email, password } = request.body
 
-  authenticationModel.findBy({ username })
+  authenticationModel.findBy({ email })
     .first()
     .then(user => {
+      const userId = user.id
       if (user && bcrypt.compareSync(password, user.password)) {
         const token = generateToken(user)
-        response.status(200).json({ message: `Welcome ${user.username}`, token })
+        response.status(200).json({ message: `Welcome ${user.email}`, token, userId })
       }
       else {
         response.status(401).json({ message: `Invalid Credentials` })
@@ -85,7 +86,7 @@ function authenticateMiddleware(request, response, next) {
         response.status(401).json({ message: 'Invalid Credentials' });
       }
       else {
-        request.user = { username: decodedToken.username }
+        request.user = { email: decodedToken.email }
         next()
       }
     })

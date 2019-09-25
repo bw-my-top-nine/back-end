@@ -8,6 +8,8 @@ const cors = require('cors')
 
 // ROUTER IMPORTS
 const authenticationRouter = require('../authentication/authenticationRouter.js');
+const categoriesRouter = require('../categories/categoriesRouter.js')
+const itemsRouter = require('../items/itemsRouter.js')
 
 // SERVER USAGE
 server.use(helmet())
@@ -16,6 +18,8 @@ server.use(express.json()) // POST & Update will use JSON
 
 // SERVER ROUTING
 server.use('/api/authentication', authenticationRouter)
+server.use('/api/categories', categoriesRouter)
+server.use('/api/items', itemsRouter)
 
 // GET TEST FOR "/"
 server.get("/", (request, response) => {

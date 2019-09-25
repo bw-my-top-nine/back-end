@@ -14,7 +14,7 @@ function add(userData) {
 
 function find() {
   return database('users')
-    .select('id', 'username')
+    .select('id', 'email')
 }
 
 function findBy(username) {

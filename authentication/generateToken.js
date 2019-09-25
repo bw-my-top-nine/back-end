@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 
 module.exports = function generateToken(user) {
   const payload = {
-    username: user.username
+    email: user.email
   }
   const options = {
     expiresIn: "1d"

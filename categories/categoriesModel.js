@@ -1,0 +1,56 @@
+const database = require('../database/databaseConfiguration')
+
+module.exports = {
+  find,
+  findCategoriesByUserId,
+  findUsersById,
+  add,
+  update,
+  findCategoriesById,
+  remove
+}
+
+function find() {
+  return database('categories')
+    .select('name', 'description', 'thumbnail')
+}
+
+function findCategoriesByUserId(id) {
+  return database('categories')
+    .join('users', 'users.id', 'categories.user_id')
+    .select(
+      'categories.name', 
+      'categories.description', 
+      'categories.thumbnail'
+      )
+    .where({ 'users.id': id })
+}
+
+function findUsersById(id) {
+  console.log(id)
+  return database('users')
+    .where({ 'users.id': id }).first()
+}
+
+function add(category, id) {
+  console.log(category)
+  return database('categories')
+    .insert(category)
+}
+
+function findCategoriesById(id) {
+  return database("categories")
+    .where({ id }).first()
+}
+
+function update(changes, id) {
+  return database('categories')
+    .where({ "id": id })
+    .update(changes)
+  }
+
+function remove(id) {
+  return database("categories")
+  .where({id})
+  .delete()
+}
