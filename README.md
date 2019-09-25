@@ -93,7 +93,7 @@ password: password1
 |-------|--------|----------|-------------|
 | Users | POST   | api/authentication/register | Creates a new user profile using the information sent inside the body of the request and returns a message along with the new user in the body of the response. | 
 | Users | POST | api/authentication/login | Uses the credentials sent inside the body to authenticate the user. On successful login, returns a message with the user info and a JSON Web Token token in the body of the response.
-| Users | GET | api/authentication/users | Retruns all daily posts created by all users if user has valid token
+| Users | GET | api/authentication/users | Returns all daily posts created by all users if user has valid token
 | Users | DELETE | api/authentication/users/:id | Deletes the user with the provided ID. Cannot be undone
 | Categories| POST | api/categories/:id/categories | Creates a new category. Requires "user_id" to be set to the user's ID and "name" which includes the categories text for that day.
 | Categories | DELETE | /api/categories/:id | Deletes the category with the provided ID. Cannot be undone.
