@@ -38,4 +38,45 @@ router.get('/:id/items', (request, response) => {
     })
 })
 
+// UPDATE Category ((U)PDATE)
+router.put('/:id', (request, response) => {
+  const { id } = request.params
+  const changes = request.body
+
+  itemsModel.findItemsById(id)
+    .then(item => {
+      if (item) {
+        itemsModel.update(changes, id)
+        .then(updatedItem => {
+          response.json(updatedItem)
+        })
+      }
+      else {
+        response.status(404).json({ message: 'Could not find item with given id' })
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ message: 'Failed to update item' })
+      console.log(error)
+    })
+})
+
+router.delete("/:id", (request, response) => {
+  const { id } = request.params
+
+  itemsModel.remove(id)
+  .then(deleted => {
+    if (deleted) {
+      response.json(deleted)
+    }
+    else {
+      response.status(404).json({ message: 'Could not delete item with  given id' })
+    }
+  })
+  .catch(error => {
+    response.status(500).json(error)
+    console.log(error)
+  })
+})
+
 module.exports = router
