@@ -122,7 +122,7 @@ EXAMPLE: { email: "example@gmail.com", password: "password" }
 |------|------|----------|-------------|
 | name | string | Yes | Must be unique |
 | description | string | No |
-| thumbnail | string | No |
+| thumbnail | string | No | defaults to stock image if left blank
 
 EXAMPLE: { name: "Cars", description: "Top 9 Cars", thumbnail: "https://picture456picture.com" }
 
@@ -131,7 +131,7 @@ EXAMPLE: { name: "Cars", description: "Top 9 Cars", thumbnail: "https://picture4
 | name | type | required | description
 |------|------|----------|-------------|
 | name | string | Yes | Must be unique |
-| thumbnail | string | No |
+| thumbnail | string | No | defaults to stock image if left blank
 
 
 EXAMPLE: { name: "Corvet", thumbnail: "https://picture456picture.com" }
