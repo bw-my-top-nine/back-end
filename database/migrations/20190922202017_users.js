@@ -26,6 +26,7 @@ exports.up = function(knex) {
     categories.string('description', 255)
 
     categories.string('thumbnail', 255)
+      .default("http://blog.journalistics.com/wp-content/uploads/2009/12/9-posts-2009.jpg?w=640")
 
     categories.integer('user_id')
       .unsigned()
@@ -46,6 +47,7 @@ exports.up = function(knex) {
       .unique()
 
     items.string('thumbnail', 255)
+      .default("http://www.unit9.com/wp-content/uploads/UNIT9_Logo_profile@2.png")
 
     items.integer('category_id')
       .unsigned()
