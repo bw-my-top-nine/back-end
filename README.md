@@ -105,3 +105,33 @@ password: password1
 | Items | UPDATE| /api/items/:id | Updates the category with the provided ID.
 | Items | DELETE | /api/items/:id | Deletes the category with the provided ID. Cannot be undone.
 
+# Register / Login Shape
+
+| name | type | required | description
+|------|------|----------|-------------|
+| email | string | Yes | Must be unique |
+| password | string | Yes |
+
+EXAMPLE: { email: "example@gmail.com", password: "password" }
+
+
+# Categories Shape
+
+| name | type | required | description
+|------|------|----------|-------------|
+| name | string | Yes | Must be unique |
+| description | string | No |
+| thumbnail | string | No |
+
+EXAMPLE: { name: "Cars", description: "Top 9 Cars", thumbnail: "https://picture456picture.com" }
+
+# Items Shape
+
+| name | type | required | description
+|------|------|----------|-------------|
+| name | string | Yes | Must be unique |
+| thumbnail | string | No |
+
+
+EXAMPLE: { name: "Corvet", thumbnail: "https://picture456picture.com" }
+
