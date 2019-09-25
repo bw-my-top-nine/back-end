@@ -77,16 +77,16 @@ email: user1@gmail.com
 password: password1
 
 email: user2@gmail.com
-password: password1
+password: password2
 
 email: user3@gmail.com
-password: password1
+password: password3
 
 email: user4@gmail.com
-password: password1
+password: password4
 
 email: user5@gmail.com
-password: password1
+password: password5
 
 # SUMMARY OF API ENDPOINTS
 | Table | Method | Endpoint | Description |
