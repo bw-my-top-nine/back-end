@@ -44,7 +44,6 @@ router.post('/:id/categories', (request, response) => {
     ...request.body, 
     user_id:id
   }
-  console.log(categoryData)
   
   categoriesModel.findUsersById(id)
     .then(user => {
@@ -60,7 +59,6 @@ router.post('/:id/categories', (request, response) => {
     })
     .catch(error => {
       response.status(500).json(error)
-      console.log(error)
     })
 })
 
