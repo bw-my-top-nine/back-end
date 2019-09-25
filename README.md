@@ -95,7 +95,7 @@ password: password5
 | Users | POST | api/authentication/login | Uses the credentials sent inside the body to authenticate the user. On successful login, returns a message with the user info and a JSON Web Token token in the body of the response.
 | Users | GET | api/authentication/users | Returns all daily posts created by all users if user has valid token
 | Users | DELETE | api/authentication/users/:id | Deletes the user with the provided ID. Cannot be undone
-| Categories| POST | api/categories/:id/categories | Creates a new category. Requires "user_id" to be set to the user's ID and "name" which includes the categories text for that day.
+| Categories| POST | api/categories/:id/categories | Creates a new category. Requires "user_id" to be set to the user's ID and "name" which includes the categories text.
 | Categories | DELETE | /api/categories/:id | Deletes the category with the provided ID. Cannot be undone.
 | Categories | UPDATE | /api/categories/:id | Updates the category with the provided ID.
 | Categories | GET | /api/categories | Gets all categories.
@@ -104,6 +104,7 @@ password: password5
 | Items | GET/:id | /api/items/:id/items | Gets all items associated with a specific category.
 | Items | UPDATE| /api/items/:id | Updates the category with the provided ID.
 | Items | DELETE | /api/items/:id | Deletes the category with the provided ID. Cannot be undone.
+| Items | POST | /api/items/1/items | Creates a new item. Requires "category_id" to be set to the category's ID and "name" which includes the item text.
 
 # Register / Login Shape
 

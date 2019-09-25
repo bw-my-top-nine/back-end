@@ -29,7 +29,7 @@ exports.up = function(knex) {
 
     categories.integer('user_id')
       .unsigned()
-      .notNullable()
+      // .notNullable()
       .references('id')
       .inTable('users')
       .onDelete('CASCADE')
@@ -49,7 +49,7 @@ exports.up = function(knex) {
 
     items.integer('category_id')
       .unsigned()
-      .notNullable()
+      // .notNullable()
       .references('id')
       .inTable('categories')
       .onDelete('CASCADE')

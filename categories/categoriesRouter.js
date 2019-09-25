@@ -39,12 +39,15 @@ router.get('/:id/categories', (request, response) => {
 
 // POST CATEGORY BY USER ID (C(REATE))
 router.post('/:id/categories', (request, response) => {
-  const categoryData = request.body
   const { id } = request.params
-
+  const categoryData = {
+    ...request.body, 
+    user_id:id
+  }
+  console.log(categoryData)
+  
   categoriesModel.findUsersById(id)
     .then(user => {
-      console.log(user)
       if (user) {
         return categoriesModel.add(categoryData, id)
           .then(newData => {

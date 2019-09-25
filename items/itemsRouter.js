@@ -38,6 +38,32 @@ router.get('/:id/items', (request, response) => {
     })
 })
 
+// POST ITEM BY CATEGORY ID (C(REATE))
+router.post('/:id/items', (request, response) => {
+  const { id } = request.params
+  const itemData = {
+    ...request.body, 
+    category_id:id
+  }
+  
+  itemsModel.findCategoriesById(id)
+    .then(category => {
+      if (category) {
+        return itemsModel.add(itemData, id)
+          .then(newData => {
+            response.status(201).json(newData)
+          })
+      }
+      else {
+         response.status(404).json({ message: 'could not find category with given id'})
+      }
+    })
+    .catch(error => {
+      response.status(500).json(error)
+      console.log(error)
+    })
+})
+
 // UPDATE Category ((U)PDATE)
 router.put('/:id', (request, response) => {
   const { id } = request.params

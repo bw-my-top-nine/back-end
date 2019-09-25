@@ -27,13 +27,13 @@ function findCategoriesByUserId(id) {
 }
 
 function findUsersById(id) {
-  console.log(id)
+  
   return database('users')
     .where({ 'users.id': id }).first()
 }
 
 function add(category, id) {
-  console.log(category)
+ 
   return database('categories')
     .insert(category)
 }
