@@ -48,8 +48,60 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
+
 Copyright © 2019 [Zachary Daniel Lasky](https://github.com/bw-my-top-nine).<br />
 This project is [ISC](https://github.com/bw-my-top-nine/back-end/blob/master/LICENSE) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+# Server
+Not Deployed Yet
+
+# Dependencies
+"axios": "^0.19.0",
+"bcryptjs": "^2.4.3",
+"cors": "^2.8.5",
+"dotenv": "^8.1.0",
+"express": "^4.17.1",
+"helmet": "^3.20.0",
+"jsonwebtoken": "^8.5.1",
+"knex": "^0.19.2",
+"sqlite3": "^4.1.0"
+
+# devDependencies
+"jest": "^24.8.0",
+"nodemon": "^1.19.1",
+"supertest": "^4.0.2"
+
+# DUMMY USER ACCOUNTS
+email: user1@gmail.com
+password: password1
+
+email: user2@gmail.com
+password: password1
+
+email: user3@gmail.com
+password: password1
+
+email: user4@gmail.com
+password: password1
+
+email: user5@gmail.com
+password: password1
+
+# SUMMARY OF API ENDPOINTS
+| Table | Method | Endpoint | Description |
+|-------|--------|----------|-------------|
+| Users | POST   | api/authentication/register | Creates a new user profile using the information sent inside the body of the request and returns a message along with the new user in the body of the response. | 
+| Users | POST | api/authentication/login | Uses the credentials sent inside the body to authenticate the user. On successful login, returns a message with the user info and a JSON Web Token token in the body of the response.
+| Users | GET | api/authentication/users | Retruns all daily posts created by all users if user has valid token
+| Users | DELETE | api/authentication/users/:id | Deletes the user with the provided ID. Cannot be undone
+| Categories| POST | api/categories/:id/categories | Creates a new category. Requires "user_id" to be set to the user's ID and "name" which includes the categories text for that day.
+| Categories | DELETE | /api/categories/:id | Deletes the category with the provided ID. Cannot be undone.
+| Categories | UPDATE | /api/categories/:id | Updates the category with the provided ID.
+| Categories | GET | /api/categories | Gets all categories.
+| Categories | GET/:id | api/categories/:id/categories |Gets all categories associated with a specific user.
+| Items | GET | /api/items | Gets all items.
+| Items | GET/:id | /api/items/:id/items | Gets all items associated with a specific category.
+| Items | UPDATE| /api/items/:id | Updates the category with the provided ID.
+| Items | DELETE | /api/items/:id | Deletes the category with the provided ID. Cannot be undone.
+
