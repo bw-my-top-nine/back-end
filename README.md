@@ -104,7 +104,7 @@ password: password5
 | Items | GET/:id | /api/items/:id/items | Gets all items associated with a specific category.
 | Items | UPDATE| /api/items/:id | Updates the category with the provided ID.
 | Items | DELETE | /api/items/:id | Deletes the category with the provided ID. Cannot be undone.
-| Items | POST | /api/items/1/items | Creates a new item. Requires "category_id" to be set to the category's ID and "name" which includes the item text.
+| Items | POST | /api/items/:id/items | Creates a new item. Requires "category_id" to be set to the category's ID and "name" which includes the item text.
 
 # Register / Login Shape
 
