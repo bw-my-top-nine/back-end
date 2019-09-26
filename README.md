@@ -124,7 +124,7 @@ EXAMPLE: { email: "example@gmail.com", password: "password" }
 | description | string | No |
 | thumbnail | string | No | defaults to stock image if left blank
 
-EXAMPLE: { name: "Cars", description: "Top 9 Cars", thumbnail: "https://picture456picture.com" }
+EXAMPLE: { name: "Cars", description: "Top 9 Cars", thumbnail: "https://picture456picture.jpg" }
 
 # Items Shape
 
@@ -134,5 +134,5 @@ EXAMPLE: { name: "Cars", description: "Top 9 Cars", thumbnail: "https://picture4
 | thumbnail | string | No | defaults to stock image if left blank
 
 
-EXAMPLE: { name: "Corvet", thumbnail: "https://picture456picture.com" }
+EXAMPLE: { name: "Corvet", thumbnail: "https://picture456picture.jpg" }
 
