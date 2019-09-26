@@ -12,7 +12,7 @@ module.exports = {
 
 function find() {
   return database('items')
-    .select('name', 'thumbnail')
+    .select('*')
 }
 
 function findItemsByCategoryId(id) {

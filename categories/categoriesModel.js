@@ -12,7 +12,7 @@ module.exports = {
 
 function find() {
   return database('categories')
-    .select('name', 'description', 'thumbnail')
+    .select('*')
 }
 
 function findCategoriesByUserId(id) {
