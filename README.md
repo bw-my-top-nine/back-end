@@ -99,9 +99,9 @@ password: password5
 | Categories | DELETE | /api/categories/:id | Deletes the category with the provided ID. Cannot be undone.
 | Categories | UPDATE | /api/categories/:id | Updates the category with the provided ID.
 | Categories | GET | /api/categories | Gets all categories.
-| Categories | GET/:id | api/categories/:id/categories |Gets all categories associated with a specific user.
+| Categories | GET/:id | api/categories/:id/categories |Gets all categories associated with a specific user ID.
 | Items | GET | /api/items | Gets all items.
-| Items | GET/:id | /api/items/:id/items | Gets all items associated with a specific category.
+| Items | GET/:id | /api/items/:id/items | Gets all items associated with a specific category ID.
 | Items | UPDATE| /api/items/:id | Updates the category with the provided ID.
 | Items | DELETE | /api/items/:id | Deletes the item with the provided ID. Cannot be undone.
 | Items | POST | /api/items/:id/items | Creates a new item. Requires "category_id" to be set to the category's ID and "name" which includes the item text.
