@@ -19,9 +19,11 @@ function findCategoriesByUserId(id) {
   return database('categories')
     .join('users', 'users.id', 'categories.user_id')
     .select(
+      'categories.id',
       'categories.name', 
       'categories.description', 
-      'categories.thumbnail'
+      'categories.thumbnail',
+      'users.id'
       )
     .where({ 'users.id': id })
 }

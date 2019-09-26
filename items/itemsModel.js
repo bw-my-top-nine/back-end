@@ -19,8 +19,10 @@ function findItemsByCategoryId(id) {
   return database('items')
     .join('categories', 'categories.id', 'items.category_id')
     .select(
+      'items.id',
       'items.name', 
-      'items.thumbnail'
+      'items.thumbnail',
+      'categories.id'
       )
     .where({ 'categories.id': id })
 }
