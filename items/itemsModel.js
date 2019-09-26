@@ -22,7 +22,7 @@ function findItemsByCategoryId(id) {
       'items.id',
       'items.name', 
       'items.thumbnail',
-      'categories.id'
+      'items.category_id'
       )
     .where({ 'categories.id': id })
 }

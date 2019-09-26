@@ -23,7 +23,7 @@ function findCategoriesByUserId(id) {
       'categories.name', 
       'categories.description', 
       'categories.thumbnail',
-      'users.id'
+      'categories.user_id'
       )
     .where({ 'users.id': id })
 }
